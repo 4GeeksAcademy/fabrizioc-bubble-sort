@@ -1,35 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="./assets/img/4geeks.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bubble Sort Cards (Bootstrap)</title>
 
-    <!-- Fontawesome is our recomended library for icons -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
+    <style>
+      .playing-card {
+        width: 5.25rem;
+        height: 7.25rem;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        border-radius: 0.6rem;
+        user-select: none;
+      }
+
+      .playing-card .mid {
+        font-size: 1.6rem;
+      }
+    </style>
   </head>
-  <body>
-    <!-- Write your HTML code here, you can delete everything withing the body tags -->
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./assets/img/rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+
+  <body class="bg-success-subtle">
+    <div class="container py-3">
+      <div class="d-flex flex-wrap gap-2 align-items-center mb-3">
+        <label for="count" class="fw-semibold me-1">Original:</label>
+        <div class="input-group" style="width: 9rem">
+          <input
+            id="count"
+            type="number"
+            min="1"
+            max="52"
+            value="6"
+            class="form-control"
+          />
+          <span class="input-group-text">cards</span>
+        </div>
+        <button id="btnDraw" class="btn btn-primary">draw</button>
+        <button id="btnSort" class="btn btn-outline-dark">Sort</button>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-12 col-lg-6">
+          <h5 class="mb-2">Cards</h5>
+          <div id="cardHost" class="row row-cols-auto g-2"></div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <h5 class="mb-2">Bubble Log:</h5>
+          <div id="logHost" class="list-group shadow-sm"></div>
+        </div>
       </div>
     </div>
 
-    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
     <script type="module" src="/app.js"></script>
   </body>
 </html>
